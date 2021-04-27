@@ -5,8 +5,12 @@ import typing
 def get_real_estate_json(url):
     pass
 
-def extract_area():
-    pass
+def extract_area(self,json):
+    for value in range(len(json['items'])):
+        if json['items'][value]['name'] == 'Užitná plocha':
+             area =  int(json['items'][value]['value'])
+    return (area)
+
 
 def extract_area_land():
     pass
