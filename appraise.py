@@ -1,6 +1,7 @@
 import argparse
 import typing
-
+import requests
+import json 
 
 def get_real_estate_json(url):
     pass
@@ -8,8 +9,10 @@ def get_real_estate_json(url):
 def extract_area():
     pass
 
-def extract_area_land():
-    pass
+def extract_area_land(url):
+    jsn = get_real_estate_json(url)
+    real_estate_land_area = jsn['items'][9]['value']
+    return real_estate_land_area
 
 def extract_gps_coordinates():
     pass
