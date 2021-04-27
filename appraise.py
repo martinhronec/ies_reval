@@ -4,7 +4,15 @@ import requests
 import json 
 
 def get_real_estate_json(url):
-    pass
+    def get_real_estate_json(url):
+    split_one = url.split('/')
+    part_with_id = split_one[-1]
+    split_two = part_with_id.split('#')
+    house_id = split_two[0]
+
+    api_url = 'https://www.sreality.cz/api/cs/v2/estates/'
+    jsn = requests.get(api_url+house_id)
+    return json.loads(jsn.text)
 
 def extract_area():
     pass
@@ -43,3 +51,5 @@ if __name__ == "__main__":
     # argument parsing from CLI
     app = Appraisor()
     app.predict()
+    
+extract_area_land(https://www.sreality.cz/detail/prodej/dum/rodinny/dekov-vlkov-/1961732700#img=0&fullscreen=False)
