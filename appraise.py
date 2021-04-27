@@ -1,7 +1,8 @@
 import argparse
 import typing
+import re
 import requests
-import json 
+import json
 
 def get_real_estate_json(url):
     split_one = url.split('/')
@@ -51,6 +52,7 @@ class Appraisor:
 
 if __name__ == "__main__":
     # argument parsing from CLI
-    app = Appraisor()
-    app.predict()
-    
+    #app = Appraisor()
+    #app.predict()
+    #get_real_estate_json()
+
