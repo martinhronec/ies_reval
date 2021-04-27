@@ -6,7 +6,6 @@ import json
 import catboost
 import argparse
 
-
 def get_real_estate_json(url):
     split_one = url.split('/')
     part_with_id = split_one[-1]
@@ -20,8 +19,13 @@ def get_real_estate_json(url):
 def extract_area():
     pass
 
-def extract_area_land():
-    pass
+def extract_area_land(url):
+    jsn = get_real_estate_json(url)
+    for i in jsn['items']:
+        if i['name']=='Plocha pozemku':
+            real_estate_land_area = i['value']
+            break
+    return real_estate_land_area
 
 def extract_gps_coordinates():
     pass
@@ -69,3 +73,4 @@ if __name__ == "__main__":
 
     app = Appraisor(url, model_path)
     app.predict()
+
