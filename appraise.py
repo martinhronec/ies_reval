@@ -4,7 +4,6 @@ import requests
 import json 
 
 def get_real_estate_json(url):
-    def get_real_estate_json(url):
     split_one = url.split('/')
     part_with_id = split_one[-1]
     split_two = part_with_id.split('#')
@@ -52,4 +51,3 @@ if __name__ == "__main__":
     app = Appraisor()
     app.predict()
     
-extract_area_land(https://www.sreality.cz/detail/prodej/dum/rodinny/dekov-vlkov-/1961732700#img=0&fullscreen=False)
