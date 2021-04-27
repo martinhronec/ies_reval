@@ -18,7 +18,10 @@ def extract_area():
 
 def extract_area_land(url):
     jsn = get_real_estate_json(url)
-    real_estate_land_area = jsn['items'][9]['value']
+    for i in jsn['items']:
+        if i['name']=='Plocha pozemku':
+            real_estate_land_area = i['value']
+            break
     return real_estate_land_area
 
 def extract_gps_coordinates():
